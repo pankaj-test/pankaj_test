@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.inrow-filter select {
+  border-radius: 100px !important;
+}
+.container {
+  max-width: 80%;
+  margin: auto;
+}
+h2.card-title{
+  /* white-space: nowrap;  */
+  width: 100%; 
+  /* overflow: hidden;
+  text-overflow: ellipsis;  */
+ 
+}
+/* @media screen and (max-width: 3200px) {
+  h2.card-title {
+    min-height: 65px;
+    margin-bottom: 0px;
+}
+}
+@media screen and (max-width: 775px) {
+  h2.card-title {
+    min-height: auto;
+}
+} */
+@media screen and (max-width: 480px) {
+.inrow-filter{
+  flex-direction: column;
+  display: flex !important;
+}
+.inrow-filter select {
+  width: 100% !important;
+  border-radius: 100px !important;
+}
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,82 @@
+.sort-switch {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.sort-toggle-button {
+  width: 70px;
+  height: 26px;
+  background: #e0e0e0;
+  border-radius: 13px;
+  position: relative;
+  transition: background-color 0.2s;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 10px;
+}
+
+.sort-toggle-button:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+.sort-toggle-button .sort-toggle-inner {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  transition: 0.3s;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sort-toggle-button.desc .sort-toggle-inner {
+  left: calc(100% - 24px);
+}
+
+.sort-toggle-button.desc {
+  background: #3498db;
+}
+
+.sort-label {
+  font-size: 14px;
+  min-width: fit-content;
+  font-weight: bold;
+  color: #7f8c8d;
+  transition: color 0.2s;
+}
+
+.sort-label.active {
+  color: #ffffff;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media screen and (max-width: 767px) {
+.header {
+  flex-direction: column;
+}
+.filters {
+  flex-direction: column;
+  width: 100%;
+}
+.sort-toggle-button {
+  width: 45px;
+}
+}

@@ -1,0 +1,172 @@
+:root {
+  --primary-color: hsl(213, 30%, 32%);
+  --secondary-color: #c9c9c9;
+  --accent-color: #fca311;
+  --background-color: #f0f5f9;
+  --card-background: #ffffff;
+  --text-color: #1c2541;
+  --text-light: #6e7c7c;
+  --delete-color: #e63946;
+  --delete-hover: #c1121f;
+  --view-color: #457b9d;
+  --view-hover: #1d3557;
+  --card-back: #e8e8e8;
+
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.listing-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: var(--primary-color);
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.error-message {
+  background-color: var(--delete-color);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.university-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.university-card {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 200px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.university-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  z-index: 2;
+}
+
+.card-back {
+  background-color: var(--card-back);
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  padding: 1rem;
+  margin: 0;
+}
+
+.card-country {
+  margin-bottom: 1rem;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.card-button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.delete-button {
+  background-color: var(--delete-color);
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: var(--delete-hover);
+}
+
+.view-button {
+  background-color: var(--view-color);
+  color: #ffffff;
+}
+
+.view-button:hover {
+  background-color: var(--view-hover);
+}
+
+/* Styles for SearchBar and SortingDropdown */
+.search-bar input,
+.sorting-dropdown select {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.search-bar input:focus,
+.sorting-dropdown select:focus {
+  outline: 2px solid var(--secondary-color);
+}
